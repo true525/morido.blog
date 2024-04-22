@@ -5,37 +5,79 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    
+
+    .container {
+      text-align: center;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
     @media (max-width: 480px) {
-      /* スマホ用のスタイル */
-      p {
-        font-size: 14px;
+      .container {
+        padding: 20px;
       }
-      
+
+      p {
+        font-size: 18px;
+      }
+
       button {
-        font-size: 14px;
-        padding: 8px 16px;
+        font-size: 16px;
+        padding: 10px 20px;
       }
     }
   </style>
 </head>
 <body>
-  <p>このサイトは <a href="https://もりど.com">もりど.com</a> に移動しました。</p>
-  <button onclick="window.location.href='https://もりど.com'">移動する</button>
+  <div class="container">
+    <p>このサイトは <a href="https://もりど.com">もりど.com</a> に移動しました。</p>
+    <button onclick="window.location.href='https://もりど.com'">移動する</button>
+  </div>
 
   <script>
-    // スマホでボタンをクリックしたときの挙動を改善
     let isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     if (isTouch) {
       let button = document.querySelector('button');
       button.addEventListener('touchstart', function() {
-        this.style.backgroundColor = '#ddd';
+        this.style.backgroundColor = '#0056b3';
       });
       button.addEventListener('touchend', function() {
-        this.style.backgroundColor = '';
+        this.style.backgroundColor = '#007bff';
       });
     }
   </script>
